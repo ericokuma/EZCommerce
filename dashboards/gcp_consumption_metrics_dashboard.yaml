@@ -1,0 +1,106 @@
+# Dashboard YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/dashboards
+# This file was generated using AI.
+
+type: metrics_view
+title: Metrics for GCP Consumption
+table: gcp_consumption_metrics
+timeseries: usage_start_time
+dimensions:
+  - label: Service Description
+    column: service_description
+    description: ""
+  - label: Sku Description
+    column: sku_description
+    description: ""
+  - label: Usage Unit
+    column: usage_unit
+    description: ""
+  - label: Pricing Unit
+    column: pricing_unit
+    description: ""
+measures:
+  - name: average_cost
+    label: Average Cost
+    expression: AVG(cost)
+    description: Average cost of GCP consumption.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: total_cost
+    label: Total Cost
+    expression: SUM(cost)
+    description: Total cost of GCP consumption.
+    format_preset: humanize
+    valid_percent_of_total: true
+  - name: max_usage_amount
+    label: Maximum Usage Amount
+    expression: MAX(usage_amount)
+    description: Maximum usage amount in GCP consumption.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: total_usage_amount
+    label: Total Usage Amount
+    expression: SUM(usage_amount)
+    description: Total usage amount in GCP consumption.
+    format_preset: humanize
+    valid_percent_of_total: true
+  - name: average_usage_amount
+    label: Average Usage Amount
+    expression: AVG(usage_amount)
+    description: Average usage amount in GCP consumption.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: unique_services
+    label: Unique Services
+    expression: COUNT(DISTINCT service_description)
+    description: Number of unique services in GCP consumption.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: unique_skus
+    label: Unique SKUs
+    expression: COUNT(DISTINCT sku_description)
+    description: Number of unique SKUs in GCP consumption.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: min_cost
+    label: Minimum Cost
+    expression: MIN(cost)
+    description: Minimum cost of GCP consumption.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: max_cost
+    label: Maximum Cost
+    expression: MAX(cost)
+    description: Maximum cost of GCP consumption.
+    format_preset: humanize
+    valid_percent_of_total: false
+available_time_zones:
+  - America/Los_Angeles
+  - America/Chicago
+  - America/New_York
+  - Europe/London
+  - Europe/Paris
+  - Asia/Jerusalem
+  - Europe/Moscow
+  - Asia/Kolkata
+  - Asia/Shanghai
+  - Asia/Tokyo
+  - Australia/Sydney
+available_time_ranges:
+  - PT6H
+  - PT24H
+  - P7D
+  - P14D
+  - P4W
+  - P3M
+  - P12M
+  - rill-TD
+  - rill-WTD
+  - rill-MTD
+  - rill-QTD
+  - rill-YTD
+  - rill-PDC
+  - rill-PWC
+  - rill-PMC
+  - rill-PQC
+  - rill-PYC

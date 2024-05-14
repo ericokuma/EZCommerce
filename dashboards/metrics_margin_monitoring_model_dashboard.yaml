@@ -1,0 +1,107 @@
+# Visit https://docs.rilldata.com/reference/project-files to learn more about Rill project files.
+# This file was generated using AI.
+
+title: Metrics for Margin Monitoring Model
+model: metrics_margin_monitoring_model
+timeseries: __time
+dimensions:
+  - label: Usage Unit
+    column: usage_unit
+    description: "test"
+  - label: Pipeline
+    column: pipeline
+    description: ""
+  - label: Component
+    column: component
+    description: ""
+  - label: Company
+    column: company
+    description: ""
+  - label: Sku Description
+    column: sku_description
+    description: ""
+  - label: App Name
+    column: app_name
+    description: ""
+  - label: Environment
+    column: environment
+    description: ""
+  - label: Location
+    column: location
+    description: ""
+  - label: Plan Name
+    column: plan_name
+    description: ""
+measures:
+  - name: average_revenue
+    label: Average Revenue
+    expression: AVG(revenue)
+    description: Average revenue generated.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: average_cost
+    label: Average Cost
+    expression: AVG(cost)
+    description: Average cost incurred.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: total_revenue
+    label: Total Revenue
+    expression: SUM(revenue)
+    description: Total revenue generated.
+    format_preset: humanize
+    valid_percent_of_total: true
+  - name: total_cost
+    label: Total Cost
+    expression: SUM(cost)
+    description: Total cost incurred.
+    format_preset: humanize
+    valid_percent_of_total: true
+  - name: total_profit
+    label: Total Profit
+    expression: SUM(revenue) - SUM(cost)
+    description: Total profit (revenue - cost).
+    format_preset: humanize
+    valid_percent_of_total: true
+  - name: profit_margin
+    label: Profit Margin
+    expression: (SUM(revenue) - SUM(cost)) / SUM(revenue)
+    description: Profit margin as a percentage.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: total_entries
+    label: Total Entries
+    expression: COUNT(*)
+    description: Total number of entries in the table.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: min_revenue
+    label: Minimum Revenue
+    expression: MIN(revenue)
+    description: Minimum revenue recorded.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: max_revenue
+    label: Maximum Revenue
+    expression: MAX(revenue)
+    description: Maximum revenue recorded.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: min_cost
+    label: Minimum Cost
+    expression: MIN(cost)
+    description: Minimum cost recorded.
+    format_preset: humanize
+    valid_percent_of_total: false
+available_time_zones:
+  - America/Los_Angeles
+  - America/Chicago
+  - America/New_York
+  - Europe/London
+  - Europe/Paris
+  - Asia/Jerusalem
+  - Europe/Moscow
+  - Asia/Kolkata
+  - Asia/Shanghai
+  - Asia/Tokyo
+  - Australia/Sydney
