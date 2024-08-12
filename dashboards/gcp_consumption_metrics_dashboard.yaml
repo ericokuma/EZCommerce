@@ -20,12 +20,6 @@ dimensions:
     column: pricing_unit
     description: ""
 measures:
-  - name: average_cost
-    label: Average Cost
-    expression: AVG(cost)
-    description: Average cost of GCP consumption.
-    format_preset: humanize
-    valid_percent_of_total: false
   - name: total_cost
     label: Total Cost
     expression: SUM(cost)
