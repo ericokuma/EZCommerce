@@ -3,7 +3,7 @@
 # This file was generated using AI.
 
 type: metrics_view
-title: Metrics for GCP Consumption
+title: EZCommerce Consumption Metrics
 table: gcp_consumption_metrics
 timeseries: usage_start_time
 dimensions:
